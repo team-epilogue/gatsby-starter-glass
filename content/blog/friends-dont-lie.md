@@ -1,9 +1,9 @@
 ---
 title: Friends don't lie
 date: 2021-01-04
-tags: [stranger things, tv series]
-social_image: '/media/rocket.jpg'
 description: This is a custom description for SEO and Open Graph purposes. If it's not provided, it defaults to auto-generated excerpts of the page content.
+category: test
+tags: [stranger things, tv series]
 ---
 
 Friends don't lie. Um, I'm happy you're home. We never would've upset you if we knew you had superpowers. Um, I'm happy you're home. Let’s burn that lab to the ground. Don’t take it so personally, okay? I don’t like most people. He’s in the vast majority.Nancy, seriously, you're gonna be so cool now, it's ridiculous. So, Jonathan, how was the pull-out? Um, I'm happy you're home. You're an idiot, Steve Harrington. You're beautiful, Nancy Wheeler. It's just, sometimes... people don't really say what they're really thinking.
@@ -46,7 +46,7 @@ const findAndReplace = (string, wordToFind, wordToReplace) => {
   return string.split(wordToFind).join(wordToReplace);
 };
 
-let result = findAndReplace('I like banana', 'banana', 'apple'); // I like apple
+let result = findAndReplace("I like banana", "banana", "apple"); // I like apple
 ```
 
 ## Quoted Text

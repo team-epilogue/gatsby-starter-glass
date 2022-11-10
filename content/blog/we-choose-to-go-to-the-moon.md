@@ -1,9 +1,9 @@
 ---
 title: We Choose to go to the Moon
 date: 2021-01-01
-tags: [space, moon]
-social_image: '/media/rocket.jpg'
 description: This is a custom description for SEO and Open Graph purposes. If it's not provided, it defaults to auto-generated excerpts of the page content.
+category: test
+tags: [space, moon]
 ---
 
 There is no strife, no prejudice, no national conflict in outer space as yet. Its hazards are hostile to us all. Its conquest deserves the best of all mankind, and its opportunity for peaceful cooperation many never come again. But why, some say, the moon? Why choose this as our goal? And they may well ask why climb the highest mountain? Why, 35 years ago, fly the Atlantic? Why does Rice play Texas?
@@ -48,7 +48,7 @@ const findAndReplace = (string, wordToFind, wordToReplace) => {
   return string.split(wordToFind).join(wordToReplace);
 };
 
-let result = findAndReplace('I like banana', 'banana', 'apple'); // I like apple
+let result = findAndReplace("I like banana", "banana", "apple"); // I like apple
 ```
 
 ## Quoted Text
