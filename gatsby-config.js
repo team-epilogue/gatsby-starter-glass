@@ -1,30 +1,7 @@
+const settings = require("./src/util/site.json")
+
 module.exports = {
-  siteMetadata: {
-    title: `Gatsby Glass`,
-    author: {
-      name: `Yinka Adedire`,
-      summary: `Self-taught front-end web dev. JAMStack.`,
-    },
-    description: `A minimal & beautiful gatsby personal blog starter with a nice glassmorphism UI.`,
-    siteUrl: `https://gatsbyglass.netlify.app`,
-    social: {
-      twitter: `yinkakun`,
-    },
-    socialLinks: [
-      {
-        name: "github",
-        url: "https://github.com",
-      },
-      {
-        name: "twitter",
-        url: "https://twitter.com",
-      },
-      {
-        name: "instagram",
-        url: "https://instagram.com",
-      },
-    ],
-  },
+  siteMetadata: settings.meta,
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
