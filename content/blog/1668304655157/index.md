@@ -3,7 +3,8 @@ template: blog-post
 templateKey: blog-post
 slug: /1668304655157
 featuredImage: /assets/post-image.png
-image: ./post-image.png
+featuredimage: /assets/post-image.png
+selectedImage: ./salty_egg.jpg
 author: githubId
 featured: false
 featuredpost: false
