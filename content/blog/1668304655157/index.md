@@ -1,9 +1,17 @@
 ---
+template: blog-post
+templateKey: blog-post
+slug: /1668304655157
+featuredImage: /assets/post-image.png
+image: ./post-image.png
+author: githubId
+featured: false
+featuredpost: false
 title: Hello World
-date: "2021-12-01T22:12:03.284Z"
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
-category: "Test Category1"
-tags: [hello, World]
+description: This is my first post on my new fake blog! How exciting!
+category: category1
+tags: [hello]
+date: 2022-11-13T10:57:35.157Z
 ---
 
 This is my first post on my new fake blog! How exciting!

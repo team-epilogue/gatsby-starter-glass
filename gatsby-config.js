@@ -1,4 +1,4 @@
-const settings = require("./src/util/site.json")
+const settings = require("./src/util/site.json");
 
 module.exports = {
   siteMetadata: settings.meta,
@@ -13,6 +13,13 @@ module.exports = {
       options: {
         name: `media`,
         path: `${__dirname}/static/media`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/assets/`,
+        name: `assets`,
       },
     },
     {
