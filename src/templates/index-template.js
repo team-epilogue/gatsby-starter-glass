@@ -1,9 +1,9 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import PostList from '../components/post-list';
-import styled from 'styled-components';
-import StyledLink from '../components/styled-link';
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import PostList from "../components/post-list";
+import styled from "styled-components";
+import StyledLink from "../components/styled-link";
 
 const HomePage = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes;
@@ -62,17 +62,13 @@ const Intro = styled.div`
 `;
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(
-      filter: { fields: { contentType: { eq: "posts" } } }
-      sort: { order: DESC, fields: frontmatter___date }
-      limit: 9
-    ) {
+    allMarkdownRemark(filter: { fields: { contentType: { eq: "posts" } } }, sort: { order: DESC, fields: frontmatter___date }, limit: 9) {
       nodes {
         fields {
           slug

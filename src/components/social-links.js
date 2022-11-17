@@ -1,25 +1,44 @@
-import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import styled from 'styled-components';
+import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import styled from "styled-components";
 
 const SocialLinks = () => {
   const data = useStaticQuery(graphql`
     {
       site {
         siteMetadata {
-          socialLinks {
-            name
-            url
+          social {
+            twitter {
+              title
+              url
+              username
+            }
+            github {
+              title
+              url
+              username
+            }
+            instagram {
+              title
+              url
+              username
+            }
+            email {
+              title
+              url
+              username
+            }
           }
         }
       }
     }
   `);
-
-  const socialLinks = data.site.siteMetadata.socialLinks.map((link) => {
+  const social_ids = data.site.siteMetadata?.social;
+  const _social_ids = Object.keys(social_ids);
+  const socialLinks = _social_ids.map((social_id, i) => {
     return (
-      <SocialLinkItem key={link.name}>
-        <a href={link.url}>{link.name}</a>
+      <SocialLinkItem key={i}>
+        <a href={social_ids[social_id].url + social_ids[social_id].username}>{social_ids[social_id].title}</a>
       </SocialLinkItem>
     );
   });

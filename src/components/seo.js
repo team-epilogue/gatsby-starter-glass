@@ -13,7 +13,26 @@ const Seo = ({ description, lang, meta, title }) => {
             siteUrl
             description
             social {
-              twitter
+              twitter {
+                title
+                url
+                username
+              }
+              github {
+                title
+                url
+                username
+              }
+              instagram {
+                title
+                url
+                username
+              }
+              email {
+                title
+                url
+                username
+              }
             }
           }
         }
@@ -55,7 +74,7 @@ const Seo = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.social?.twitter || ``,
+          content: site.siteMetadata?.social?.twitter.username || ``,
         },
         {
           name: `twitter:title`,

@@ -14,10 +14,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
           nodes {
             fields {
               contentType
@@ -28,10 +25,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
-        tagsGroup: allMarkdownRemark(
-          limit: 2000
-          filter: { fields: { contentType: { eq: "posts" } } }
-        ) {
+        tagsGroup: allMarkdownRemark(limit: 2000, filter: { fields: { contentType: { eq: "posts" } } }) {
           group(field: frontmatter___tags) {
             fieldValue
           }
@@ -41,23 +35,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   );
 
   if (result.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      result.errors
-    );
+    reporter.panicOnBuild(`There was an error loading your blog posts`, result.errors);
     return;
   }
 
   const tags = result.data.tagsGroup.group;
   const allMarkdownNodes = result.data.allMarkdownRemark.nodes;
 
-  const blogMarkdownNodes = allMarkdownNodes.filter(
-    (node) => node.fields.contentType === `posts`
-  );
+  const blogMarkdownNodes = allMarkdownNodes.filter((node) => node.fields.contentType === `posts`);
 
-  const pageMarkdownNodes = allMarkdownNodes.filter(
-    (node) => node.fields.contentType === `pages`
-  );
+  const pageMarkdownNodes = allMarkdownNodes.filter((node) => node.fields.contentType === `pages`);
 
   if (blogMarkdownNodes.length > 0) {
     blogMarkdownNodes.forEach((node, index) => {
@@ -159,10 +146,20 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Author {
       name: String
       summary: String
+      profile: String
     }
 
     type Social {
-      twitter: String
+      github: SocialId,
+      instagram: SocialId,
+      twitter: SocialId,
+      email: SocialId,
+    }
+
+    type SocialId{
+      title: String,
+      username: String,
+      url: String
     }
 
     type MarkdownRemark implements Node {
